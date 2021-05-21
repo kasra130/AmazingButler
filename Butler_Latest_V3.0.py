@@ -591,13 +591,15 @@ class SixthPage(tk.Frame):          #implimentations: quick summary of everythin
             df2=pd.read_csv(login_name+'e'+'.csv')
             df_array1=df2.values
             ave1_float=(df_array1[:,0]).mean()
-            ave1=str(ave1_float)
+            rounded_ave = round(ave1_float, 2)
+            ave1=str(rounded_ave)
 
             #income ave
             df3=pd.read_csv(login_name+'i'+'.csv')
             df_array2=df3.values
             ave2_float=(df_array2[:,0]).mean()
-            ave2=str(ave2_float)
+            rounded_ave2 = round(ave2_float, 2)
+            ave2=str(rounded_ave2)
             
            
         
@@ -605,7 +607,8 @@ class SixthPage(tk.Frame):          #implimentations: quick summary of everythin
             df=pd.read_csv(login_name+'.csv')   #getting the net of the transactions 
             df_array=df.values 
             ave34_float=(df_array[:,2]).mean()
-            ave34=str(ave34_float)
+            rounded_ave34=round(ave34_float, 2)
+            ave34=str(rounded_ave34)
         
 
 
@@ -1034,4 +1037,3 @@ class Application(tk.Tk):     #implimantions: All pages=> same theme, clock, cal
 app = Application()
 app.maxsize(1000,800)
 app.mainloop()
-
